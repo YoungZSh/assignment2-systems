@@ -31,7 +31,7 @@ for config in "${CONFIGS[@]}"; do
     echo "Running benchmark for size: $NAME"
     echo "  (d_model=$D_MODEL, d_ff=$D_FF, layers=$NUM_LAYERS, heads=$NUM_HEADS)"
     
-    uv run python cs336_systems/benchmarking.py \
+    uv run python cs336_systems/benchmark/benchmarking.py \
         --d_model "$D_MODEL" \
         --d_ff "$D_FF" \
         --num_layers "$NUM_LAYERS" \
@@ -60,7 +60,7 @@ ITERATIONS=10
 
 for WARMUP in 0 1 2 5; do
     echo "Running benchmark with WARMUP_STEPS=$WARMUP"
-    uv run python cs336_systems/benchmarking.py \
+    uv run python cs336_systems/benchmark/benchmarking.py \
         --d_model "$D_MODEL" \
         --d_ff "$D_FF" \
         --num_layers "$NUM_LAYERS" \

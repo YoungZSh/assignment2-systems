@@ -44,7 +44,7 @@ for config in "${CONFIGS[@]}"; do
             -t cuda,nvtx,osrt \
             -o "$OUTPUT_FILE" \
             --force-overwrite true \
-            uv run python cs336_systems/profile_model.py \
+            uv run python cs336_systems/benchmark/profile_model.py \
                 --d_model "$D_MODEL" \
                 --d_ff "$D_FF" \
                 --num_layers "$NUM_LAYERS" \
