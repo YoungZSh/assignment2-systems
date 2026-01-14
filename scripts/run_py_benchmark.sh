@@ -1,5 +1,13 @@
 #!/bin/bash
 
+# Get the directory where the script is located
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+# The project root is one level up
+PROJECT_ROOT="$(dirname "$SCRIPT_DIR")"
+
+# Change to the project root directory
+cd "$PROJECT_ROOT" || { echo "Failed to change directory to project root"; exit 1; }
+
 # 模型配置数组: "Name d_model d_ff num_layers num_heads"
 CONFIGS=(
     "small 768 3072 12 12"
